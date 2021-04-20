@@ -14,4 +14,13 @@ module.exports = {
         index: '/',
         auth: '/auth',
     },
+
+    // oauths
+    oauths: {
+        google: {
+            id: process.env.OAUTH_GOOGLE_ID,
+            secret: process.env.OAUTH_GOOGLE_SECRET,
+            callback: process.env.OAUTH_GOOGLE_CALLBACK,
+        },
+    },
 }
