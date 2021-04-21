@@ -1,4 +1,5 @@
-nav.gnb_content{
+
+header.header{
     position : fixed; 
     
     top : 0;
@@ -9,18 +10,43 @@ nav.gnb_content{
     
     background-color : #121013;
     color : white;
+    
+    justify-content : space-between;
+    align-items: initial;
+    flex-direction: row;
 }
 
-ul.gnb{
-    display : inline-block;
-    height : 50px;
+header.header #header_title > span.string,
+header.header #user_contents span.string {
+    color : white;
+    line-height : 28px;
 }
 
-ul.gnb .item{
-    display : inline;
-    line-height : 48px;
-    height : 50px;
-    text-align: center;
-    padding : 0 20px;
-    cursor : pointer;
+header.header #user_contents span.string a{
+    color : white;
 }
+
+header.header div.header_title,
+header.header div.header_contents{
+    max-width : 120px;
+    min-height : 30px;
+    padding : 10px 5px;
+}
+
+header.header div:first-child{margin-left : 8px;}
+header.header div:last-child{margin-right : 8px;}
+
+
+nav.gnb{ 
+    position: fixed;
+    top : 65px; 
+    right : 0;
+    margin-right : 10px;
+}
+
+nav.gnb #gnb_contents .list_item{
+    margin-bottom : 10px;
+    padding : 5px 10px;
+    text-align : right;
+}
+nav.gnb #gnb_contents .list_item:last-child{margin-bottom : initial;}
