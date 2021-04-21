@@ -7,26 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/global.css">
     <link rel="stylesheet" href="stylesheets/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>WeAreTogether</title>
 </head>
 
 <body>
     <div class="container">
 
+        <header class="header basic_shadow flex">
+            <div id="header_title" class="header_contents">
+                <span class="string">Together</span>
+            </div>
 
-        <nav class="gnb_content">
-            <ul class="gnb">
-                <li class="item">
-                    로그인
-                </li>
-                <li class="item">
-                    그룹
-                </li>
-            </ul>
-        </nav>
-        <section>
+            <div id="user_contents" class="header_contents btn">
+                <% if(!locals.name) { %>
+                    <div id="login" class="item btn">
+                        <span class="string">
+                            <a href="/auth/google">로그인</a>
+                        </span>
+                    </div>
+                    <% }else{ %>
+                        <div id="user" class="item btn">
+                            <span class="string">
+                                <a href="#">
+                                    <%= locals.name %>
+                                </a>
+                            </span>
+                        </div>
+                        <% } %>
+            </div>
+        </header>
 
-        </section>
+        <% if(locals.name) { %>
+            <%- include('nav/gnb') %>
+                <% } %>
+                    <section>
+                    </section>
     </div>
 </body>
 
